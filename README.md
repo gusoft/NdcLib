@@ -1,5 +1,7 @@
-# NdcLib
+# Ndc
 
+The constructor takes an unpadded-hyphenated NDC.
+It is impossible to determine the structure when the NDC is padded, or unhyphenated for all FDA NDCs, so this is necessary.
 
 ``` js
 const ndc = new Ndc('1234-5678-90')
