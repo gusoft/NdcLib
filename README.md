@@ -28,13 +28,13 @@ Ndcs can now be passed around as an instance of the `Ndc` class, without needing
 
 
 const doSomething = (ndc: Ndc) => {
-    const formattedNdc = ndc.unhyphenated(true);
-    return fetch('https://someservice.com?ndc=' + formattedNdc)
+    const unhyphenatedNdc = ndc.unhyphenated(true);
+    return fetch('https://someservice.com?ndc=' + unhyphenatedNdc)
 }
 
 const doSomethingElse = (ndc: Ndc) => {
-    const formattedNdc = ndc.hyphenated();
-    return fetch('https://someotherservice.com?ndc=' + formattedNdc)
+    const hyphenatedNdc = ndc.hyphenated();
+    return fetch('https://someotherservice.com?ndc=' + hyphenatedNdc)
 }
 
 ```
