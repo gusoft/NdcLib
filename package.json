@@ -1,0 +1,31 @@
+{
+  "name": "ndclib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "jest": "^26.1.0",
+    "line-reader": "^0.4.0",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "ts-jest": "^26.1.1"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest ./spec/unit --no-cache",
+    "postinstall": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grant-unwin/NdcLib.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grant-unwin/NdcLib/issues"
+  },
+  "homepage": "https://github.com/grant-unwin/NdcLib#readme"
+}
