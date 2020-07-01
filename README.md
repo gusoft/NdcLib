@@ -3,7 +3,7 @@
 The constructor takes an unpadded-hyphenated NDC.
 It is impossible to determine the structure when the NDC is padded, or unhyphenated for all FDA NDCs, so this is necessary.
 
-## Package
+## PackageNdc
 
 ``` js
 const ndc = new PackageNdc('1234-5678-90')
@@ -23,8 +23,7 @@ ndc.unhyphenated(); // return '1234567890'
 ndc.unhyphenated(true); // return '01234567890'
 
 ```
-## Package
-
+## ProdustNdc
 
 ``` js
 const ndc = new ProductNdc('1234-5678')
