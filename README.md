@@ -4,7 +4,7 @@ The constructor takes an unpadded-hyphenated NDC.
 It is impossible to determine the structure when the NDC is padded, or unhyphenated for all FDA NDCs, so this is necessary.
 
 ``` js
-const ndc = new Ndc('1234-5678-90')
+const ndc = new PackageNdc('1234-5678-90')
 ```
 
 ```js 
@@ -22,19 +22,33 @@ ndc.unhyphenated(true); // return '01234567890'
 
 ```
 
+A product NDC can also be obtained from a PackageNdc:
+
+``` js
+const packageNdc: PackageNdc = new PackageNdc('1234-5678-90')
+const productNdc: ProductNdc = packageNdc.product();
+
+const rawProductNdc: string = productNdc.hyphenated(); // returns 1234-5678
+```
+
 Ndcs can now be passed around as an instance of the `Ndc` class, without needing to know the underlying NDC format requirement. 
 
 ``` js
 
 
-const doSomething = (ndc: Ndc) => {
+const doSomething = (ndc: PackageNdc) => {
     const unhyphenatedNdc = ndc.unhyphenated(true);
     return fetch('https://someservice.com?ndc=' + unhyphenatedNdc)
 }
 
-const doSomethingElse = (ndc: Ndc) => {
+const doSomethingElse = (ndc: PackageNdc) => {
     const hyphenatedNdc = ndc.hyphenated();
     return fetch('https://someotherservice.com?ndc=' + hyphenatedNdc)
+}
+
+const doSomethingElseButWithProduct = (ndc: PackageNdc) => {
+    const hyphenatedNdc = ndc.product().hyphenated();
+    return fetch('https://someotherservice.com?productndc=' + hyphenatedNdc)
 }
 
 ```
