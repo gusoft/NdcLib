@@ -21,3 +21,20 @@ ndc.unhyphenated(); // return '1234567890'
 ndc.unhyphenated(true); // return '01234567890'
 
 ```
+
+Ndcs can now be passed around as an instance of the `Ndc` class, without needing to know the underlying NDC format requirement. 
+
+``` js
+
+
+const doSomething = (ndc: Ndc) => {
+    const formattedNdc = ndc.unhyphenated(true);
+    return fetch('https://someservice.com?ndc=' + formattedNdc)
+}
+
+const doSomethingElse = (ndc: Ndc) => {
+    const formattedNdc = ndc.hyphenated();
+    return fetch('https://someotherservice.com?ndc=' + formattedNdc)
+}
+
+```
