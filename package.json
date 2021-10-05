@@ -1,11 +1,11 @@
 {
-  "name": "ndc-lib",
+  "name": "@gusoft/ndc-lib",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@gusoft"
+    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "jest": "^26.1.0",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/grant-unwin/NdcLib.git"
+    "url": "git+https://github.com/gusoft/NdcLib.git"
   },
   "author": "",
   "license": "ISC",
